@@ -1,24 +1,9 @@
-# README
+# Image Server
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project for testing the use of RIIIF as the next image server for DLSS.
 
-Things you may want to cover:
+## testing
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rake test
+```

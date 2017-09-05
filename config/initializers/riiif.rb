@@ -1,11 +1,4 @@
-# Riiif::Image.file_resolver = Riiif::HTTPFileResolver.new
-
-# Riiif::Image.file_resolver.id_to_uri = lambda do |id|
-#   ActiveFedora::Base.id_to_uri(CGI.unescape(id)).tap do |url|
-#     Rails.logger.info "Riiif resolved #{id} to #{url}"
-#   end
-# end
-# # Riiif::Image.file_resolver.basic_auth_credentials = [ActiveFedora.fedora.user, ActiveFedora.fedora.password]
+Riiif::Image.file_resolver = StacksFileResolver.new(base_path: Settings.file_resolver.base_path)
 
 # Riiif::Image.info_service = lambda do |id, _file|
 #   # id will look like a path to a pcdm:file
@@ -20,11 +13,9 @@
 #   { height: doc['height_is'], width: doc['width_is'] }
 # end
 
-
 # Riiif::Image.authorization_service = IIIFAuthorizationService
 
 # Riiif.not_found_image = 'app/assets/images/us_404.svg'
 # Riiif.unauthorized_image = 'app/assets/images/us_404.svg'
 
 # Riiif::Engine.config.cache_duration_in_days = 365
-
