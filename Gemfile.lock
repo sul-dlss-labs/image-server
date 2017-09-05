@@ -42,6 +42,10 @@ GEM
     builder (3.2.3)
     byebug (9.1.0)
     concurrent-ruby (1.0.5)
+    config (1.4.0)
+      activesupport (>= 3.0)
+      deep_merge (~> 1.1.1)
+    deep_merge (1.1.1)
     deprecation (1.0.0)
       activesupport
     erubi (1.6.1)
@@ -127,6 +131,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  config
   listen (>= 3.0.5, < 3.2)
   puma (~> 3.7)
   rails (~> 5.1.3)
