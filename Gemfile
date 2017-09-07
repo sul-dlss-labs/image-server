@@ -42,3 +42,16 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'config'
 gem 'riiif'
+
+# Use Honeybadger for exception reporting
+gem 'honeybadger'
+
+# Use Capistrano for deployment
+group :deployment do
+  gem 'capistrano', '~> 3.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+  gem 'capistrano-shared_configs'
+  gem 'dlss-capistrano'
+end
