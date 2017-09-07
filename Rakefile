@@ -9,10 +9,20 @@ task test: [:fetch_remote_file]
 
 task :fetch_remote_file do
   dir = 'test/fixtures/files/dz302gz2129'
-  Dir.mkdir(dir) unless File.exist?(dir)
   filename = 'PC0082_b06_f01_Baseball_1986_0012.jp2'
+  url = "https://stacks.stanford.edu/file/dz302gz2129/#{filename}"
+  fetch(dir, filename, url)
+
+  dir = 'test/fixtures/files/validator'
+  filename = '67352ccc-d1b0-11e1-89ae-279075081939.jp2'
+  url = "http://iiif.io/api/image/validator/#{filename}"
+  fetch(dir, filename, url)
+end
+
+def fetch(dir, filename, url)
+  Dir.mkdir(dir) unless File.exist?(dir)
   file = File.join(dir, filename)
   unless File.exist?(file)
-    `curl https://stacks.stanford.edu/file/dz302gz2129/#{filename} -o #{file}`
+    `curl #{url} -o #{file}`
   end
 end
