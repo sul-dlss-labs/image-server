@@ -134,7 +134,7 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
-    riiif (1.6.0)
+    riiif (1.7.0)
       deprecation (>= 1.0.0)
       railties (>= 4.2, < 6)
     ruby_dep (1.5.0)
@@ -173,7 +173,6 @@ DEPENDENCIES
   capistrano-rails
   capistrano-shared_configs
   config
-  deprecation
   dlss-capistrano
   honeybadger
   listen (>= 3.0.5, < 3.2)
