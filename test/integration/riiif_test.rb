@@ -15,6 +15,13 @@ class RiiifTest < ActionDispatch::IntegrationTest
   test 'can return an image' do
     get '/image-service/dz302gz2129/full/!150,300/0/default.jpg'
     assert_response :ok
-    assert_equal(4816, response.body.size)
+    ident = Tempfile.open(['test', '.jpg']) do |file|
+      file.binmode
+      file.write response.body
+      file.close
+      `identify #{file.path}`
+    end
+    byebug
+    assert_match(/JPEG 150x101/, ident)
   end
 end
