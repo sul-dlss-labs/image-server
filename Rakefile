@@ -8,7 +8,7 @@ Rails.application.load_tasks
 task test: [:fetch_remote_file]
 
 task :fetch_remote_file do
-  dir = 'test/fixtures/files/dz302gz2129'
+  dir = 'test/fixtures/files/dz/302/gz/2129'
   filename = 'PC0082_b06_f01_Baseball_1986_0012.jp2'
   url = "https://stacks.stanford.edu/file/dz302gz2129/#{filename}"
   fetch(dir, filename, url)
@@ -20,7 +20,7 @@ task :fetch_remote_file do
 end
 
 def fetch(dir, filename, url)
-  Dir.mkdir(dir) unless File.exist?(dir)
+  FileUtils.mkdir_p(dir) unless File.exist?(dir)
   file = File.join(dir, filename)
   unless File.exist?(file)
     `curl #{url} -o #{file}`
