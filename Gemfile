@@ -41,7 +41,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'config'
-gem 'riiif'
+gem 'riiif', '>= 2.0.0.beta1'
 
 # Use Honeybadger for exception reporting
 gem 'honeybadger'
