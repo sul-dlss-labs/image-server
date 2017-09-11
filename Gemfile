@@ -46,6 +46,8 @@ gem 'riiif', '>= 2.0.0.beta1'
 # Use Honeybadger for exception reporting
 gem 'honeybadger'
 
+gem 'whenever', require: false
+
 # Use Capistrano for deployment
 group :deployment do
   gem 'capistrano', '~> 3.0'
