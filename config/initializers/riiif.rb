@@ -1,6 +1,9 @@
 Riiif::Image.file_resolver = StacksFileResolver.new(base_path: Settings.file_resolver.base_path)
 
 Riiif::Engine.config.kakadu_enabled = true
+Riiif::ImageMagickInfoExtractor.external_command = Settings.riiif.imagemagick.commands.identify
+Riiif::ImagemagickCommandFactory.external_command = Settings.riiif.imagemagick.commands.convert
+
 
 # Riiif::Image.info_service = lambda do |id, _file|
 #   # id will look like a path to a pcdm:file

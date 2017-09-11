@@ -3,3 +3,9 @@ file_resolver:
 
 server:
   allow_encoded_slashes: ~
+
+riiif:
+  imagemagick:
+    commands:
+      identify: 'identify'
+      convert: 'convert'

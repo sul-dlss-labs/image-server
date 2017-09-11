@@ -3,3 +3,10 @@ file_resolver:
 
 server:
   allow_encoded_slashes: NoDecode
+
+riiif:
+  imagemagick:
+    commands:
+      identify: '/usr/local/bin/identify'
+      convert: '/usr/local/bin/convert'
+
