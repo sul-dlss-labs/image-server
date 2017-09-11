@@ -1,2 +1,5 @@
 file_resolver:
   base_path: test/fixtures/files
+
+server:
+  allow_encoded_slashes: ~

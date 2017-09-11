@@ -4,6 +4,7 @@ class StacksFileResolver < Riiif::FileSystemFileResolver
   end
 
   def pattern(id)
+    id = id.gsub('%2F', '/') if Settings.server.allow_encoded_slashes == 'NoDecode'
     raise ArgumentError, "Invalid characters in id `#{id}`" unless id =~ /\A[\w\-:\/\.]+\.(#{input_types.join('|')})\Z/
     path = File.expand_path(File.join(base_path, id))
 
