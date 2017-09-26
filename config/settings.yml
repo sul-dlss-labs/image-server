@@ -9,3 +9,6 @@ riiif:
     commands:
       identify: 'identify'
       convert: 'convert'
+
+kakadu:
+  enabled: false

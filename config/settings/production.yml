@@ -10,3 +10,5 @@ riiif:
       identify: '/usr/local/bin/identify'
       convert: '/usr/local/bin/convert'
 
+kakadu:
+  enabled: false

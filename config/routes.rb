@@ -8,16 +8,16 @@ Rails.application.routes.draw do
   ALLOW_ANYTHING_BUT_SLASHES = /[^\/]+/
 
   constraints id: ALLOW_ANYTHING_BUT_SLASHES, rotation: Riiif::Routes::ALLOW_DOTS, size: Riiif::Routes::SIZES do
-    get "/image-service/:id/:region/:size/:rotation/:quality.:format" => 'riiif/images#show',
+    get "/iiif/2/:id/:region/:size/:rotation/:quality.:format" => 'riiif/images#show',
         defaults: { format: 'jpg', rotation: '0', region: 'full', quality: 'default', model: 'riiif/image' },
         as: 'riiif_image'
 
-    get "/image-service/:id/info.json" => 'riiif/images#info',
+    get "/iiif/2/:id/info.json" => 'riiif/images#info',
         defaults: { format: 'json', model: 'riiif/image' },
         as: 'riiif_info'
 
     # This doesn't work presently
     # get "#{route_prefix}/:id", to: redirect("#{route_prefix}/%{id}/info.json")
-    get "/image-service/:id" => 'riiif/images#redirect', as: 'riiif_base'
+    get "/iiif/2/:id" => 'riiif/images#redirect', as: 'riiif_base'
   end
 end
